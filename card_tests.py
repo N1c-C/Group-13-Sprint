@@ -9,7 +9,7 @@ card_deck = Deck()
 def display_deck(deck):
     for i in range(deck.count()):
         card = deck.deal()
-        print(f'{card.suit}{card.value} ', end='')
+        print(f'{card} ', end='')
 
 
 # Check there are 52 cards, deal and display cards:
