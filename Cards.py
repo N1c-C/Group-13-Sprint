@@ -13,7 +13,11 @@ class Card:
     def __init__(self, suit, value):
         self.suit = suit
         self.value = value
-
+        
+    def __str__(self):
+        """Convert the values to standard card format as a str"""
+        vals = ['', 'A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
+        return vals[self.value] + self.suit    
 
 class Deck:
     """ Represents a pack of 52 Card objects
