@@ -14,7 +14,7 @@ class Player(Hand):
                                   # flag for ace as 1 or 11
     def deal(self):                             # initial 2 cards
         for i in range(2):
-            
+            global deck
             card = deck.pop_card()              # deal off top of deck
             self.add_card(card)                 # add to hand
             if card.value > 10:                  # court cards have indices 11 -13
