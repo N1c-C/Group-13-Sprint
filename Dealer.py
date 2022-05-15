@@ -2,6 +2,7 @@ import time
 from Cards import *
 from Hand import *
 from Deck import *
+from variables import *
 
 
 class Dealer(Hand):
@@ -16,7 +17,7 @@ class Dealer(Hand):
                                   # flag for ace as 1 or 11
     def deal(self):                             # initial 2 cards
         for i in range(2):
-            card = self.deck.pop_card()              # deal off top of deck
+            card = deck.pop_card()              # deal off top of deck
             self.add_card(card)                 # add to hand
             if card.value > 10:                  # court cards have indices 11 -13
                 self.total += 10                # ... but value is 10
@@ -27,7 +28,7 @@ class Dealer(Hand):
         Dealer.show_hand(self)
 
     def twist(self):                            # one card at a time
-        card = self.deck.pop_card()                  
+        card = deck.pop_card()                  
         self.add_card(card)                     
         if card.value > 10:
             self.total += 10

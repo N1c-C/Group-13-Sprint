@@ -7,7 +7,8 @@ Mark D. Yarnell -
 Mark -
 Olli -
 @ A. Mcnulty - https://github.com/niall-anthony-mcnulty
-"""
+""" 
+
 import random  # needed for shuffling
 from Cards import *
 from Dealer import *
@@ -15,16 +16,17 @@ from Hand import *
 from Player import *
 from Deck import *
 from functions import *
+from variables import deck
 
 if __name__ == "__main__":  
     
     
-  
+    deck = deck
+    print(deck)
     p1 = Player(input("Name: "))
     dealer = Dealer()
 
-    while p1.credits > 0: 
-        deck = Deck()                           # a new deck every hand
+    while p1.credits > 0:                          # a new deck every hand
         deck.shuffle()                      # shuffled
         play_hand(p1, dealer)               # to do - add more players, betting
     print("Sorry, you're out of credit!")
