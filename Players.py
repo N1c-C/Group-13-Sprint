@@ -51,7 +51,6 @@ class Player:
         self.aces = False
         self.bust = False
 
-
 class Dealer(Player):
     """Represents the dealer (computer) inherits methods from Player
     Overloads methods as required """
@@ -72,17 +71,15 @@ class Dealer(Player):
         If self.turn is False represents the first card as a ?"""
         hand = ''
         if not self.turn:
-            hand = '? ' + self.cards[1].face()  # Hide one card show the other
+            return '? ' + self.cards[1].face()  # Hide one card show the other
         else:
-            for card in self.cards:
-                hand += card.face()
-                hand += ' '
-        return hand
+            return super().get_hand()
 
     def score(self):  # show the total
         """Returns the computer score as a formatted str.
         Returns a question mark when it is the player's go and only one dealer card has been revealed"""
         if self.turn:
-            return f'{self.total} {"or " + str(self.total + 10) if self.aces and self.total + 10 <= 21 else ""}'
+            return super().score()
         else:
             return '?'
+        
